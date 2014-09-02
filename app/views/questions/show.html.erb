@@ -1,6 +1,9 @@
 <div class="page-header">
   <h1><%= @question.question %></h1>
-  <p>Posted by <%= link_to @question.user.name, user_path(@question.user) %> on <%= @question.created_at %></p>
+  <p>Posted by <%= link_to @question.user.name, user_path(@question.user) %>
+   on <%= @question.created_at %>
+   <% if current_user == @question.user %>
+      <%= link_to "Edit", edit_user_question_path(@question.user, @question) %></p><% end %>
 </div>
 
 <h4><%= @question.description %></h4>

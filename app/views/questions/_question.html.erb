@@ -1,6 +1,5 @@
-
-      <tr>
-        <td><%= link_to question.question, user_question_path(question.user, question) %></td>
-        <td><%= question.created_at %></td>
-        <td><%= question.responses.count %></td>
-      </tr>
+<tr>
+  <td><%= link_to question.question, user_question_path(question.user, question) %></td>
+  <td><%= question.created_at %></td>
+  <td><%= question.responses.count %></td>
+</tr>

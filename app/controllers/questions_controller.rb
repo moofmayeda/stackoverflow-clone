@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_filter :authorize, except: [:index, :show]
+
   def index
     @questions = Question.all
   end
@@ -21,6 +23,20 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      flash[:notice] = "Question updated!"
+      redirect_to user_question_path(@question.user, @question)
+    else
+      render 'edit'
+    end
   end
 
 private

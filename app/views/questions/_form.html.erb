@@ -1,6 +1,6 @@
 <%= render("layouts/errors", :object => @question) %>
 
-<%= form_for [@user, @question] do |f| %>
+<%= form_for [@question.user, @question] do |f| %>
   <div class="form-group">
     <%= f.label :question %>
     <%= f.text_field :question %>
