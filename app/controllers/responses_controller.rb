@@ -10,6 +10,11 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def edit
+    @response = Response.find(params[:id])
+    @question = @response.question
+  end
+
 private
   def response_params
     params.require(:response).permit(:response)

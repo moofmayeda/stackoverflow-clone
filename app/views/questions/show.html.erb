@@ -13,4 +13,6 @@
 <div id ="all_responses">
   <%= render @question.responses %>
 </div>
-<%= render 'responses/form' %>
+<% if current_user %>
+  <%= render 'responses/form' %>
+<% end %>
