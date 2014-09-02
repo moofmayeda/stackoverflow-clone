@@ -23,6 +23,11 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    if current_user
+      @response = current_user.responses.new
+    else
+      @response = Response.new
+    end
   end
 
   def edit
