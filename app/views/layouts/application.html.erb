@@ -16,6 +16,9 @@
         <ul class="nav navbar-nav">
           <li><%= link_to "Questions", questions_path %></li>
           <li><%= link_to "Users", users_path %></li>
+          <% if current_user %>
+            <li><%= link_to "New Question", new_user_question_path(current_user) %></li>
+          <% end %>
         </ul>
         <% if current_user %>
           <%= link_to "Logout", session_path("current"), method: "delete", class: "pull-right" %>

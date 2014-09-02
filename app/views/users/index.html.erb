@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1>All Users</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Questions Posted</th>
+      <th>Responses Posted</th>
+    </tr>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= user.questions.count %></td>
+        <td><%= user.responses.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
