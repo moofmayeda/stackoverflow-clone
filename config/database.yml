@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: stackoverflow_development
+
+test:
+  <<: *default
+  database: stackoverflow_test
+
+production:
+  <<: *default
+  database: stackoverflow_production
+  username: stackoverflow
+  password: <%= ENV['STACKOVERFLOW_DATABASE_PASSWORD'] %>
