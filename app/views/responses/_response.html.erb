@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= link_to response.user.name, user_path(response.user) %>
+      <span class='pull-right'><%= response.created_at %></span>
+    </h3>
+  </div>
+  <div class="panel-body">
+   <p><%= response.response %></p>
+  </div>
+</div>
