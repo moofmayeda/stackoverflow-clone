@@ -1,17 +1,6 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Question</th>
-      <th>Date Posted</th>
-      <th>Responses</th>
-    </tr>
-  <tbody>
-    <% @questions.each do |question| %>
+
       <tr>
-        <td><%= link_to question.question, user_question_path(@question.user, question) %></td>
+        <td><%= link_to question.question, user_question_path(question.user, question) %></td>
         <td><%= question.created_at %></td>
         <td><%= question.responses.count %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>

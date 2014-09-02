@@ -2,7 +2,17 @@
   <h1><%= @user.name %></h1>
 </div>
 
-<%= render @user.questions %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Question</th>
+    <th>Date Posted</th>
+    <th>Responses</th>
+  </tr>
+  <tbody>
+    <%= render @user.questions %>
+  </tbody>
+</table>
 
 <% if current_user %>
   <p><%= link_to "Delete Account", user_path, data: {method: "delete"}, class: "btn btn-danger" %></p>

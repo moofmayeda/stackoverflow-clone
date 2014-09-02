@@ -1,7 +1,17 @@
 <div class="row">
   <div class="col-md-8">
     <h4>Questions</h4>
-    <%= render @questions %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Question</th>
+        <th>Date Posted</th>
+        <th>Responses</th>
+      </tr>
+      <tbody>
+        <%= render @questions %>
+      </tbody>
+    </table>
   </div>
   <div class="col-md-4">
     <h4>Hot Questions</h4>
