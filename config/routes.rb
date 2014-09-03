@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :questions, only: [:index]
   resources :users do
     resources :questions, except: [:index] do
-      resources :responses
+      resources :responses do
+        resources :best_responses, only: [:create, :destroy]
+      end
     end
   end
   resources :sessions, only: [:new, :create, :destroy]

@@ -19,4 +19,9 @@ describe "creating a new response" do
     click_button 'Create Response'
     expect(page).to have_content "This question is silly"
   end
+
+  it "is not successful if a user is not signed in" do
+    visit "/users/#{@question_poster.id}/questions/#{@test_question.id}"
+    expect(page).to have_no_content "Create Response"
+  end
 end
