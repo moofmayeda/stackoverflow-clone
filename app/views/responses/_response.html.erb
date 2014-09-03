@@ -4,14 +4,14 @@
       <%= link_to response.user.name, user_path(response.user) %>
       <% if current_user == response.user %>
         <span class='pull-right'><%= link_to "Edit", edit_user_question_response_path(response.question.user,response.question,response), id: "edit_link_#{response.id}", remote: true %></span>
-      <% elsif current_user == response.question.user %>
-        <span class='pull-right'><%= link_to "Mark best", user_question_response_best_responses_path(response.question.user,response.question,response), method: :post, id: "chosen_link_#{response.id}" %></span>
+      <% elsif current_user == response.question.user && response.question.best_response.response != response %>
+        <span class='pull-right'><%= link_to "Mark best", user_question_response_best_responses_path(response.question.user,response.question,response), method: :post, id: "chosen_link_#{response.id}", remote: true %></span>
       <% end %>
       <span class='pull-right'><%= response.created_at %></span>
       <% if response.question.best_response && response.question.best_response.response == response %>
-        <span class='pull-right glyphicon glyphicon-star' %></span>
+        <span id="star_status_<%= response.id %>" class='pull-right glyphicon glyphicon-star'></span>
       <% else %>
-        <span class='pull-right glyphicon glyphicon-star-empty' %></span>
+        <span id="star_status_<%= response.id %>" class='pull-right glyphicon glyphicon-star-empty'></span>
       <% end %>
     </h3>
   </div>
