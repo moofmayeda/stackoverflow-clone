@@ -19,6 +19,8 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'pry'
+  gem 'database_cleaner'
 end
 
 group :test do
