@@ -6,6 +6,6 @@ class Response < ActiveRecord::Base
   has_many :votes
 
   def count
-    2
+    Vote.where(response_id: self.id).count
   end
 end
