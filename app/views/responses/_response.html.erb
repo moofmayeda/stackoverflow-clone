@@ -1,14 +1,14 @@
-<div class="panel panel-default">
+<div class="panel panel-default" id="response_<%= response.id %>">
   <div class="panel-heading">
     <h3 class="panel-title">
       <%= link_to response.user.name, user_path(response.user) %>
       <% if current_user == response.user %>
-        <span class='pull-right'><%= link_to "Edit", edit_user_question_response_path(response.question.user,response.question,response), class: "btn btn-primary edit_link" %></span>
+        <span class='pull-right'><%= link_to "Edit", edit_user_question_response_path(response.question.user,response.question,response), id: "edit_link_#{response.id}", remote: true %></span>
       <% end %>
       <span class='pull-right'><%= response.created_at %></span>
     </h3>
   </div>
   <div class="panel-body">
-   <p><%= response.response %></p>
+   <p><span id="response_text_<%= response.id %>"><%= response.response %></span></p>
   </div>
 </div>

@@ -1,0 +1,3 @@
+$('#edit_link_<%= @response.id %>').show()
+$('#edit_response_<%= @response.id %>').remove()
+$('#response_text_<%= @response.id %>').text("<%= @response.response %>")
