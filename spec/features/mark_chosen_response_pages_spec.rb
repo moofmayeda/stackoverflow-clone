@@ -20,7 +20,7 @@ describe "mark as chosen answer" do
     within("#chosen_link_#{@response.id}") do
       click_on('Mark best')
     end
-    expect(page).to have_content "Best Answer"
+    expect(page).to have_css "#glyphicon glyphicon-star"
   end
 
   # it "is not successful if a user is not signed in" do

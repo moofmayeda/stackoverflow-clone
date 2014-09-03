@@ -8,7 +8,7 @@
         <span class='pull-right'><%= link_to "Mark best", user_question_response_best_responses_path(response.question.user,response.question,response), method: :post, id: "chosen_link_#{response.id}" %></span>
       <% end %>
       <span class='pull-right'><%= response.created_at %></span>
-      <% if response.question.best_response.response == response %>
+      <% if response.question.best_response && response.question.best_response.response == response %>
         <span class='pull-right glyphicon glyphicon-star' %></span>
       <% else %>
         <span class='pull-right glyphicon glyphicon-star-empty' %></span>
