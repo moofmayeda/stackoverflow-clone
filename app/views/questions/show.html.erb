@@ -11,7 +11,7 @@
 <h3>Responses</h3>
 <hr>
 <div id ="all_responses">
-  <%= render @question.responses %>
+  <%= render @question.best_first %>
 </div>
 <% if current_user %>
   <%= render 'responses/form' %>
